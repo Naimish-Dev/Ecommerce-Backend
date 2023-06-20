@@ -12,7 +12,12 @@ const Transaction_router = require("../Router/Transaction");
 const dotenv=require("dotenv");
 dotenv.config();
 const cors =require("cors")
-app.use(cors());
+    const corsOptions = {
+      origin: '*',
+      credentials: true,
+      optionSuccessStatus: 200
+    }
+    app.use(cors(corsOptions))
 // to get data from body  which have in json format
 app.use(express.json())
 
